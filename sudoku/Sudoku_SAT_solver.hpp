@@ -13,6 +13,7 @@ private:
 
 public:
 	SudokuSolver(bool write_dimacs = false);
+	board read_board(std::istream& in);
     // Returns true if applying the board does not lead to UNSAT result
     bool apply_board(board const&);
     // Returns true if the sudoku has a solution

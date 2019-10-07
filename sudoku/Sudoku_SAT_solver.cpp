@@ -1,7 +1,7 @@
-#include "sudoku_solver.hpp"
-
 #include <iostream>
+#include <string>
 
+#include "Sudoku_SAT_solver.hpp"
 
 //namespace {
 
@@ -15,6 +15,58 @@ Minisat::Var toVar_sudoku(int row, int column, int value) {
     assert(value >= 0 && value < values   && "Attempt to get var for nonexistant value");
     return row * columns * values + column * values + value;
 }
+
+//namespace {
+
+
+/**
+* Input patterns:
+* [1-9] means that square has a digit assigned,
+* . means empty square
+* Example:
+*
+*  123...456
+*  .........
+*  .........
+*  456...789
+*  .........
+*  .........
+*  789...123
+*  .........
+*  .........
+*
+*/
+board SudokuSolver::read_board(std::istream& in) {
+	board parsed(9, std::vector<int>(9));
+	int lines = 1;
+	std::string line;
+	while (std::getline(in, line) && lines <= 9) {
+		if (line.size() != 9) {
+			throw std::runtime_error("Line #" + std::to_string(lines) + " has invalid size.");
+		}
+		for (size_t ci = 0; ci < line.size(); ++ci) {
+			char c = line[ci];
+			if (c == '.') {
+				continue;
+			}
+			else if (c >= '0' && c <= '9') {
+				parsed[lines - 1][ci] = c - '0';
+			}
+			else {
+				throw std::runtime_error("Line #" + std::to_string(lines) + "contains invalid character: '" + c + "'");
+			}
+		}
+		++lines;
+	}
+	if (lines != 10) {
+		throw std::runtime_error("The input is missing a line");
+	}
+
+	return parsed;
+}
+
+
+//} // end anonymous namespace
 
 bool is_valid_board(board const& b) {
     if (b.size() != rows) {

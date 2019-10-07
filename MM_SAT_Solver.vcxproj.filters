@@ -33,84 +33,84 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\core\Dimacs.h">
+    <ClInclude Include="minisat\minisat\core\Dimacs.h">
       <Filter>Source Files\minisat\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\core\Solver.h">
+    <ClInclude Include="minisat\minisat\core\Solver.h">
       <Filter>Source Files\minisat\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\core\SolverTypes.h">
+    <ClInclude Include="minisat\minisat\core\SolverTypes.h">
       <Filter>Source Files\minisat\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\mtl\Map.h">
+    <ClInclude Include="minisat\minisat\mtl\Map.h">
       <Filter>Source Files\minisat\mtl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\mtl\Queue.h">
+    <ClInclude Include="minisat\minisat\mtl\Queue.h">
       <Filter>Source Files\minisat\mtl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\mtl\Sort.h">
+    <ClInclude Include="minisat\minisat\mtl\Sort.h">
       <Filter>Source Files\minisat\mtl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\mtl\Vec.h">
+    <ClInclude Include="minisat\minisat\mtl\Vec.h">
       <Filter>Source Files\minisat\mtl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\mtl\XAlloc.h">
+    <ClInclude Include="minisat\minisat\mtl\XAlloc.h">
       <Filter>Source Files\minisat\mtl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\mtl\Alg.h">
+    <ClInclude Include="minisat\minisat\mtl\Alg.h">
       <Filter>Source Files\minisat\mtl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\mtl\Alloc.h">
+    <ClInclude Include="minisat\minisat\mtl\Alloc.h">
       <Filter>Source Files\minisat\mtl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\mtl\Heap.h">
+    <ClInclude Include="minisat\minisat\mtl\Heap.h">
       <Filter>Source Files\minisat\mtl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\mtl\IntTypes.h">
+    <ClInclude Include="minisat\minisat\mtl\IntTypes.h">
       <Filter>Source Files\minisat\mtl</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\simp\SimpSolver.h">
+    <ClInclude Include="minisat\minisat\simp\SimpSolver.h">
       <Filter>Source Files\minisat\simp</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\utils\ParseUtils.h">
+    <ClInclude Include="minisat\minisat\utils\ParseUtils.h">
       <Filter>Source Files\minisat\utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\utils\System.h">
+    <ClInclude Include="minisat\minisat\utils\System.h">
       <Filter>Source Files\minisat\utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\utils\Options.h">
+    <ClInclude Include="minisat\minisat\utils\Options.h">
       <Filter>Source Files\minisat\utils</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\sudoku\sudoku_solver.hpp">
+    <ClInclude Include="sudoku\Sudoku_SAT_solver.hpp">
       <Filter>Source Files\Sudoku</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\core\Solver.cc">
+    <ClCompile Include="minisat\minisat\core\Solver.cc">
       <Filter>Source Files\minisat\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\core\SolverTypes.cc">
+    <ClCompile Include="minisat\minisat\core\SolverTypes.cc">
       <Filter>Source Files\minisat\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\core\core_main.cc">
+    <ClCompile Include="minisat\minisat\core\core_main.cc">
       <Filter>Source Files\minisat\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\simp\SimpSolver.cc">
+    <ClCompile Include="minisat\minisat\simp\SimpSolver.cc">
       <Filter>Source Files\minisat\simp</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\simp\simp_main.cc">
+    <ClCompile Include="minisat\minisat\simp\simp_main.cc">
       <Filter>Source Files\minisat\simp</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\utils\System.cc">
+    <ClCompile Include="minisat\minisat\utils\System.cc">
       <Filter>Source Files\minisat\utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\minisat\minisat\utils\Options.cc">
+    <ClCompile Include="minisat\minisat\utils\Options.cc">
       <Filter>Source Files\minisat\utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\sudoku\sudoku_solver.cpp">
+    <ClCompile Include="sudoku\Sudoku_main.cpp">
       <Filter>Source Files\Sudoku</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\%40_Programming\Everything\MM_SAT_Solver\sudoku\sudoku_main.cpp">
+    <ClCompile Include="sudoku\Sudoku_SAT_solver.cpp">
       <Filter>Source Files\Sudoku</Filter>
     </ClCompile>
   </ItemGroup>
