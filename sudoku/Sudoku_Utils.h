@@ -71,8 +71,8 @@ namespace mm {
 	{
 	public:
 
-		static bool validateSudokuSolution(const vector< vector<int> >& dataIn);
-		static int validateSudokuSolution(const vector< vector< vector<int> > >& dataSetsIn);
+		static bool validateSudokuSolution(const vector<int>& dataIn);
+		static int validateSudokuSolution(const vector< vector<int> >& dataSetsIn);
 		static bool compareSudokuSolutions(const vector< vector<int> >& data1, const vector< vector<int> >& data2);
 		static vector< vector<int> > convertToVectorOfVector(const string& str, const unsigned int dimension, const unsigned int numbersRangeStartsWith = 1);
 		static vector< vector<int> > convertToVectorOfVector2(const string& str, const unsigned int dimension);

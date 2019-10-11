@@ -74,9 +74,9 @@ namespace mm {
 	}
 	*/
 
-	bool Sudoku_Utils::validateSudokuSolution(const vector< vector<int> >& dataIn)
+	bool Sudoku_Utils::validateSudokuSolution(const vector<int>& dataIn)
 	{
-		int size = dataIn.size();
+		int size = sqrt(dataIn.size());
 		//unsigned int bits;
 		//unsigned int initialVal = (1 << 9) - 1; // int having only righmost 9 bits ON, rest bits OFF
 
@@ -87,13 +87,14 @@ namespace mm {
 		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
 		// Validate each row
-		for (int row = 0; row < size; row++)
+		int index = 0;
+		for (int row = 0; row < size; ++row)
 		{
 			bits = initialVal;
-			for (int i = 0; i < size && dataIn[row][i] > 0; i++)
+			for (int i = 0; i < size && dataIn[index] > 0; ++i, ++index)
 			{
 				//bits &= ~(1 << (dataIn[row][i] - 1)); // Make rightmost (i + 1)th bit OFF
-				bits.setnthBitOFF(dataIn[row][i]);
+				bits.setnthBitOFF(dataIn[index]);
 				//cout << "\nSet " << dataIn[row][i] << " bit off. All digits: ";
 				//bits.printAllDigits();
 			}
@@ -109,12 +110,13 @@ namespace mm {
 		}
 
 		// Validate each column
-		for (int column = 0; column < size; column++)
+		index = 0;
+		for (int column = 0; column < size; ++column)
 		{
 			bits = initialVal;
-			for (int i = 0; i < size && dataIn[i][column] > 0; i++)
+			for (int i = 0; i < size && dataIn[index] > 0; ++i, ++index)
 				//bits &= ~(1 << (dataIn[i][column] - 1)); // Make rightmost (i + 1)th bit OFF
-				bits.setnthBitOFF(dataIn[i][column]);
+				bits.setnthBitOFF(dataIn[index]);
 			if (bits != BigIntegerBitCollection_v1(0))
 			{
 				SetConsoleTextAttribute(hConsole, 9);
@@ -133,10 +135,10 @@ namespace mm {
 			{
 				bits = initialVal;
 				bool isValid = true;
-				for (int row = rowStart; row < rowStart + jump && isValid; row++)
-					for (int column = columnStart; column < columnStart + jump && (isValid = dataIn[row][column] > 0); column++)
+				for (int row = rowStart; row < rowStart + jump && isValid; ++row)
+					for (int column = columnStart; column < columnStart + jump && (isValid = dataIn[row * size + column] > 0); ++column)
 						//bits &= ~(1 << (dataIn[row][column] - 1)); // Make rightmost (i + 1)th bit OFF
-						bits.setnthBitOFF(dataIn[row][column]);
+						bits.setnthBitOFF(dataIn[row * size + column]);
 
 				if (bits != BigIntegerBitCollection_v1(0))
 				{
@@ -153,7 +155,7 @@ namespace mm {
 		return true;
 	}
 
-	int Sudoku_Utils::validateSudokuSolution(const vector< vector< vector<int> > >& dataSetsIn)
+	int Sudoku_Utils::validateSudokuSolution(const vector< vector<int> >& dataSetsIn)
 	{
 		int numInvalidSolutions = 0;
 		for (size_t i = 0; i < dataSetsIn.size(); ++i)

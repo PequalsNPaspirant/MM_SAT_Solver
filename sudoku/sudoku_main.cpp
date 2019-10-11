@@ -38,7 +38,8 @@ namespace mm
 				unsigned long long duration = time_taken.count();
 
 				Sudoku_Utils::printSudokuGrid(sudokuSolution, sudokuPuzzle);
-				std::clog << "\n\nSolution found in " << formatWithCommas(duration) << " nanoseconds\n";
+				std::cout << "\n\nSolution found in " << formatWithCommas(duration) << " nanoseconds\n";
+				std::cout << "\nSolution validation: " << (Sudoku_Utils::validateSudokuSolution(sudokuSolution) ? "SUCCESS" : "FAILED");
 			}
 		}
 	}
