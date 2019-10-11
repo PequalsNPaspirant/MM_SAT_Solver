@@ -81,7 +81,19 @@
     <ClInclude Include="minisat\minisat\utils\Options.h">
       <Filter>Source Files\minisat\utils</Filter>
     </ClInclude>
-    <ClInclude Include="sudoku\Sudoku_SAT_solver.hpp">
+    <ClInclude Include="sudoku\Sudoku_Generator.h">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="sudoku\Sudoku_Utils.h">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="sudoku\Sudoku_Logger.h">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="sudoku\Sudoku_Solver_SAT_v1.h">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClInclude>
+    <ClInclude Include="sudoku\Sudoku_Solver_Backtrack_v1.h">
       <Filter>Source Files\Sudoku</Filter>
     </ClInclude>
   </ItemGroup>
@@ -110,7 +122,19 @@
     <ClCompile Include="sudoku\Sudoku_main.cpp">
       <Filter>Source Files\Sudoku</Filter>
     </ClCompile>
-    <ClCompile Include="sudoku\Sudoku_SAT_solver.cpp">
+    <ClCompile Include="sudoku\Sudoku_Generator.cpp">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="sudoku\Sudoku_Utils.cpp">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="sudoku\Sudoku_Logger.cpp">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="sudoku\Sudoku_Solver_SAT_v1.cpp">
+      <Filter>Source Files\Sudoku</Filter>
+    </ClCompile>
+    <ClCompile Include="sudoku\Sudoku_Solver_Backtrack_v1.cpp">
       <Filter>Source Files\Sudoku</Filter>
     </ClCompile>
   </ItemGroup>
