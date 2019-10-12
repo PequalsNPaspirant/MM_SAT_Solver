@@ -40,6 +40,7 @@ namespace mm
 				Sudoku_Utils::printSudokuGrid(sudokuSolution, sudokuPuzzle);
 				std::cout << "\n\nSolution found in " << formatWithCommas(duration) << " nanoseconds\n";
 				std::cout << "\nSolution validation: " << (Sudoku_Utils::validateSudokuSolution(sudokuSolution) ? "SUCCESS" : "FAILED");
+				std::cin.get();
 			}
 		}
 	}

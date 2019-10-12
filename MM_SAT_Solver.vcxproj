@@ -46,11 +46,11 @@
     <ClCompile Include="sudoku\Sudoku_Logger.cpp" />
     <ClCompile Include="sudoku\Sudoku_Solver_Backtrack_v1.cpp" />
     <ClCompile Include="sudoku\Sudoku_Utils.cpp" />
-    <ClCompile Include="minisat\minisat\core\core_main.cc" />
+    <ClCompile Include="minisat\minisat\core\Main.cc" />
     <ClCompile Include="minisat\minisat\core\Solver.cc" />
     <ClCompile Include="minisat\minisat\core\SolverTypes.cc" />
     <ClCompile Include="minisat\minisat\simp\SimpSolver.cc" />
-    <ClCompile Include="minisat\minisat\simp\simp_main.cc" />
+    <ClCompile Include="minisat\minisat\simp\Main.cc" />
     <ClCompile Include="minisat\minisat\utils\Options.cc" />
     <ClCompile Include="minisat\minisat\utils\System.cc" />
     <ClCompile Include="sudoku\Sudoku_main.cpp" />
