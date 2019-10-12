@@ -1,0 +1,11 @@
+Windows:
+cmake -G "Visual Studio 15 2017 Win64" ..
+cmake --build . --config RelWithDebInfo
+
+Linux:
+cmake -DCMAKE_BUILD_TYPE=Debug -H. -B"build"
+cmake --build build
+
+Windows modifed:
+cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Debug -H. -B"build"
+cmake --build build --config RelWithDebInfo
