@@ -1,0 +1,15 @@
+/.vs/MM_SAT_Solver/v15/ipch/AutoPCH/b570f5ca4d20ba0f/*.ipch
+/.vs/MM_SAT_Solver/v15/ipch/AutoPCH/25505ab50efcdbc3/*.ipch
+*.ipch
+*.tlog
+*.obj
+*.suo
+*.db
+*.opendb
+*.exe
+*.ilk
+*.log
+*.pdb
+*.idb
+Debug
+x64
