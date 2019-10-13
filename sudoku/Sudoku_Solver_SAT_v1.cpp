@@ -3,6 +3,7 @@
 #include <chrono>
 
 #include "Sudoku_Solver_SAT_v1.h"
+#include "Sudoku_Logger.h"
 
 //namespace {
 
@@ -304,17 +305,36 @@ void SudokuSolverSAT_v1::get_solution(std::vector<int>& solution) const
 	//return b;
 }
 
-void test_SudokuSolverSAT_v1(int dimension, const std::vector<int>& sudokuPuzzle, std::vector<int>& sudokuSolution)
+bool test_SudokuSolverSAT_v1(int dimension, const std::vector<int>& sudokuPuzzle, std::vector<int>& sudokuSolution, std::chrono::high_resolution_clock::time_point tps[])
 {
+	tps[0] = std::chrono::high_resolution_clock::now();
 	SudokuSolverSAT_v1 s(dimension);
-	if (!s.apply_board(sudokuPuzzle))
+	tps[1] = std::chrono::high_resolution_clock::now();
+	unsigned long long initialization = std::chrono::duration_cast<std::chrono::nanoseconds>(tps[1] - tps[0]).count();
+	std::cout << "\n    Initialization : " << mm::formatWithCommas(initialization) << " nanoseconds";
+	
+	bool result = s.apply_board(sudokuPuzzle);
+	tps[2] = std::chrono::high_resolution_clock::now();
+	unsigned long long applyBoard = std::chrono::duration_cast<std::chrono::nanoseconds>(tps[2] - tps[1]).count();
+	std::cout << "\n    applyBoard     : " << mm::formatWithCommas(applyBoard) << " nanoseconds";
+
+	if (!result)
 	{
 		std::cout << "\nThere is a contradiction in the parsed!\n";
-		return;
+		return false;
 	}
 
 	s.solve();
+	tps[3] = std::chrono::high_resolution_clock::now();
+	unsigned long long solving = std::chrono::duration_cast<std::chrono::nanoseconds>(tps[3] - tps[2]).count();
+	std::cout << "\n    solving         : " << mm::formatWithCommas(solving) << " nanoseconds";
+
 	s.get_solution(sudokuSolution);
+	tps[4] = std::chrono::high_resolution_clock::now();
+	unsigned long long extractSolution = std::chrono::duration_cast<std::chrono::nanoseconds>(tps[4] - tps[3]).count();
+	std::cout << "\n    extractSolution : " << mm::formatWithCommas(extractSolution) << " nanoseconds";
+
+	return true;
 }
 
 int sudoku_solver_SAT_main()

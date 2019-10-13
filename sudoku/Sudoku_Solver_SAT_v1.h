@@ -34,4 +34,4 @@ private:
 	const int values_;
 };
 
-void test_SudokuSolverSAT_v1(int dimension, const std::vector<int>& sudokuPuzzle, std::vector<int>& sudokuSolution);
+bool test_SudokuSolverSAT_v1(int dimension, const std::vector<int>& sudokuPuzzle, std::vector<int>& sudokuSolution, std::chrono::high_resolution_clock::time_point tps[]);
