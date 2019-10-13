@@ -131,13 +131,19 @@ public:
     void copyTo(vec<T>& copy) const {
         copy.clear();
         copy.capacity(size());
+		//MM: modifications to original minisat source code
+#ifdef _DEBUG
+		for (int i = 0; i < size(); ++i)
+			copy[i] = m_data[i];
+#else
+		std::copy(begin(), end(), copy.begin());
+#endif
         //std::copy_if(begin(), end(), copy.begin());
 		//std::copy_if(begin(), end(), copy.begin(), [](const T& obj) { return true; });
 		//std::copy(m_data, m_data + size(), copy.begin());
 		//std::copy(m_data, m_data + size(), stdext::checked_array_iterator<T>(copy.m_data, size()));
 		//std::copy(begin(), end(), std::back_inserter(copy));
-		for (int i = 0; i < size(); ++i)
-			copy[i] = m_data[i];
+
         copy.m_current = copy.m_data + size();
     }
     void moveTo(vec<T>& dest) {

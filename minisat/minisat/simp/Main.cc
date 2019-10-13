@@ -32,8 +32,10 @@ using namespace Minisat;
 
 //=================================================================================================
 
+//MM: modifications to original minisat source code
+namespace simp {
 
-void printStatsSIMP(Solver& solver)
+void printStats(Solver& solver)
 {
     double cpu_time = cpuTime();
 #   ifndef __MINGW32__
@@ -60,7 +62,7 @@ void printStatsSIMP(Solver& solver)
 }
 
 
-static Solver* simp_solver;
+static Solver* solver;
 #if !(defined(__MINGW32__) || defined(_MSC_VER))
 // Terminate by notifying the solver and back out gracefully. This is mainly to have a test-case
 // for this feature of the Solver as it may take longer than an immediate call to '_exit()'.
@@ -72,7 +74,7 @@ static void SIGINT_interrupt(int) { solver->interrupt(); }
 static void SIGINT_exit(int) {
     fprintf(stderr, "\n"); fprintf(stderr, "*** INTERRUPTED ***\n");
     if (solver->verbosity > 0){
-		printStatsSIMP(*solver);
+        printStats(*solver);
         fprintf(stderr, "\n"); fprintf(stderr, "*** INTERRUPTED ***\n"); }
     _exit(1); }
 #endif
@@ -81,7 +83,7 @@ static void SIGINT_exit(int) {
 //=================================================================================================
 // Main:
 
-int main_simp(int argc, char** argv)
+int main(int argc, char** argv)
 {
     try {
         setUsageHelp("USAGE: %s [options] <input-file> <result-output-file>\n\n  where input is a file containing plain DIMACS.\n");
@@ -109,7 +111,7 @@ int main_simp(int argc, char** argv)
 
         S.verbosity = verb;
 
-		simp_solver = &S;
+        solver = &S;
         // Use signal handlers that forcibly quit until the solver will be able to respond to
         // interrupts:
 #if !(defined(__MINGW32__) || defined(_MSC_VER))
@@ -141,8 +143,9 @@ int main_simp(int argc, char** argv)
         if (argc == 1)
             fprintf(stderr, "Reading from standard input... Use '--help' for help.\n");
 
+		//MM: modifications to original minisat source code
         //FILE* in = (argc == 1) ? fdopen(0, "rb") : fopen(argv[1], "rb");
-		FILE* in = nullptr;
+		FILE* in = NULL;
 		if(argc == 1)
 			fopen_s(&in, argv[1], "rb");
         if (in == NULL)
@@ -154,8 +157,9 @@ int main_simp(int argc, char** argv)
 
         parse_DIMACS(in, S);
         fclose(in);
+		//MM: modifications to original minisat source code
         //FILE* res = (argc >= 3) ? fopen(argv[2], "wb") : NULL;
-		FILE* res = nullptr;
+		FILE* res = NULL;
 		if (argc >= 3)
 			fopen_s(&res, argv[2], "wb");
 
@@ -185,7 +189,7 @@ int main_simp(int argc, char** argv)
             if (S.verbosity > 0){
                 fprintf(stderr, "===============================================================================\n");
                 fprintf(stderr, "Solved by simplification\n");
-				printStatsSIMP(S);
+                printStats(S);
                 fprintf(stderr, "\n"); }
             fprintf(stderr, "UNSATISFIABLE\n");
             exit(20);
@@ -196,7 +200,7 @@ int main_simp(int argc, char** argv)
                 fprintf(stderr, "==============================[ Writing DIMACS ]===============================\n");
             S.toDimacs((const char*)dimacs);
             if (S.verbosity > 0)
-				printStatsSIMP(S);
+                printStats(S);
             exit(0);
         }
 
@@ -204,7 +208,7 @@ int main_simp(int argc, char** argv)
         lbool ret = S.solveLimited(dummy);
 
         if (S.verbosity > 0){
-			printStatsSIMP(S);
+            printStats(S);
             printf("\n"); }
         printf(ret == l_True ? "SATISFIABLE\n" : ret == l_False ? "UNSATISFIABLE\n" : "INDETERMINATE\n");
         if (res != NULL){
@@ -232,3 +236,6 @@ int main_simp(int argc, char** argv)
         exit(0);
     }
 }
+
+//MM: modifications to original minisat source code
+} //namespace core

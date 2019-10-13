@@ -838,6 +838,7 @@ void Solver::toDimacs(FILE* f, Clause& c, vec<Var>& map, Var& max)
 
 void Solver::toDimacs(const char *file, const vec<Lit>& assumps)
 {
+	//MM: modifications to original minisat source code
 	//FILE* f = fopen(file, "wr");
 	FILE* f = nullptr;
 	fopen_s(&f, file, "wr");
