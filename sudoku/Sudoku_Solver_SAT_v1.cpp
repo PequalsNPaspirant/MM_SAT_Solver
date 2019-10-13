@@ -311,12 +311,12 @@ bool test_SudokuSolverSAT_v1(int dimension, const std::vector<int>& sudokuPuzzle
 	SudokuSolverSAT_v1 s(dimension);
 	tps[1] = std::chrono::high_resolution_clock::now();
 	unsigned long long initialization = std::chrono::duration_cast<std::chrono::nanoseconds>(tps[1] - tps[0]).count();
-	std::cout << "\n    Initialization : " << mm::formatWithCommas(initialization) << " nanoseconds";
+	std::cout << "\n    Initialization  : " << mm::formatWithCommas(initialization) << " nanoseconds";
 	
 	bool result = s.apply_board(sudokuPuzzle);
 	tps[2] = std::chrono::high_resolution_clock::now();
 	unsigned long long applyBoard = std::chrono::duration_cast<std::chrono::nanoseconds>(tps[2] - tps[1]).count();
-	std::cout << "\n    applyBoard     : " << mm::formatWithCommas(applyBoard) << " nanoseconds";
+	std::cout << "\n    applyBoard      : " << mm::formatWithCommas(applyBoard) << " nanoseconds";
 
 	if (!result)
 	{
