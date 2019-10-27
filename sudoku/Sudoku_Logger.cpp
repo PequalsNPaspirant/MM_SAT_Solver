@@ -81,9 +81,9 @@ namespace mm {
 
 		try
 		{
-			size_t start = logFileFullName.find_last_of('\\') + 1;
+			size_t start = logFileFullName.find_last_of('/') + 1;
 			//logFileName = logFileName.substr(start, logFileFullName.length() - start);
-			string fullFileNameWithTimestamp(logFileFullName + "_" + getCurrentLocalTimeInNanoSeconds() + ".cpplog");
+			string fullFileNameWithTimestamp(logFileFullName + "_" + getCurrentLocalTimeInNanoSeconds() + ".txt");
 			m_logFile.open(fullFileNameWithTimestamp);
 		}
 		catch (std::ofstream::failure &writeErr)

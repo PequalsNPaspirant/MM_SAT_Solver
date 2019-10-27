@@ -357,7 +357,7 @@ namespace mm {
 
 	Logger& Sudoku_Utils::getLogger()
 	{
-		static Logger sudokuSolverLogger("..\\..\\..\\test\\logs\\windows_visual_studio\\SudokuSolverLogs\\SudokuSolverLogs", true, true, false);
+		static Logger sudokuSolverLogger("data/Sudoku/logs/test", true, true, false);
 		return sudokuSolverLogger;
 	}
 
