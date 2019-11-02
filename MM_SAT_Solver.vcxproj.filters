@@ -31,6 +31,9 @@
     <Filter Include="Source Files\Sudoku">
       <UniqueIdentifier>{3cfa8ca7-de5f-40af-af90-334db1804ace}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Google_OR_Tools_examples">
+      <UniqueIdentifier>{4a8b9ca4-228d-464c-a30f-d3e0c28b0286}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="minisat\minisat\core\Dimacs.h">
@@ -90,10 +93,10 @@
     <ClInclude Include="sudoku\Sudoku_Logger.h">
       <Filter>Source Files\Sudoku</Filter>
     </ClInclude>
-    <ClInclude Include="sudoku\Sudoku_Solver_SAT_v1.h">
+    <ClInclude Include="sudoku\Sudoku_Solver_Backtrack_v1.h">
       <Filter>Source Files\Sudoku</Filter>
     </ClInclude>
-    <ClInclude Include="sudoku\Sudoku_Solver_Backtrack_v1.h">
+    <ClInclude Include="sudoku\Sudoku_Solver_minisat_v1.h">
       <Filter>Source Files\Sudoku</Filter>
     </ClInclude>
   </ItemGroup>
@@ -125,9 +128,6 @@
     <ClCompile Include="sudoku\Sudoku_Logger.cpp">
       <Filter>Source Files\Sudoku</Filter>
     </ClCompile>
-    <ClCompile Include="sudoku\Sudoku_Solver_SAT_v1.cpp">
-      <Filter>Source Files\Sudoku</Filter>
-    </ClCompile>
     <ClCompile Include="sudoku\Sudoku_Solver_Backtrack_v1.cpp">
       <Filter>Source Files\Sudoku</Filter>
     </ClCompile>
@@ -136,6 +136,9 @@
     </ClCompile>
     <ClCompile Include="minisat\minisat\simp\Main.cc">
       <Filter>Source Files\minisat\simp</Filter>
+    </ClCompile>
+    <ClCompile Include="sudoku\Sudoku_Solver_minisat_v1.cpp">
+      <Filter>Source Files\Sudoku</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 #include <string>
 #include <chrono>
 
-#include "Sudoku_Solver_SAT_v1.h"
+#include "Sudoku_Solver_minisat_v1.h"
 #include "Sudoku_Logger.h"
 
 //namespace {

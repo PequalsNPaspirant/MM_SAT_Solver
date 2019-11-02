@@ -39,7 +39,7 @@
     <ClInclude Include="minisat\minisat\utils\Options.h" />
     <ClInclude Include="minisat\minisat\utils\ParseUtils.h" />
     <ClInclude Include="minisat\minisat\utils\System.h" />
-    <ClInclude Include="sudoku\Sudoku_Solver_SAT_v1.h" />
+    <ClInclude Include="sudoku\Sudoku_Solver_minisat_v1.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="sudoku\Sudoku_Generator.cpp" />
@@ -54,7 +54,7 @@
     <ClCompile Include="minisat\minisat\utils\Options.cc" />
     <ClCompile Include="minisat\minisat\utils\System.cc" />
     <ClCompile Include="sudoku\Sudoku_main.cpp" />
-    <ClCompile Include="sudoku\Sudoku_Solver_SAT_v1.cpp" />
+    <ClCompile Include="sudoku\Sudoku_Solver_minisat_v1.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
