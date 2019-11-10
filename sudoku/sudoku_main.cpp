@@ -6,12 +6,12 @@
 #include "Sudoku_Generator.h"
 #include "Sudoku_Utils.h"
 
-#include "Sudoku_Solver_SAT_v1.h"
+#include "Sudoku_Solver_minisat_v1.h"
 #include "Sudoku_Solver_Backtrack_v1.h"
 
 namespace mm
 {
-	void test()
+	void sudoku_test()
 	{
 		int dimensionStart = 2;
 		int dimensionEnd = 10;
@@ -67,12 +67,4 @@ namespace mm
 		}
 	}
 
-}
-
-int main() 
-{
-	mm::test();
-
-	std::cin.get();
-	return 0;
 }
