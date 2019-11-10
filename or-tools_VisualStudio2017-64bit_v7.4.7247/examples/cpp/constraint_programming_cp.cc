@@ -13,6 +13,11 @@
 
 // Constraint programming example that shows how to use the API.
 
+//Changes to original file
+#define _SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING
+#define LANG_CXX11
+#define NOMINMAX
+
 #include "ortools/base/logging.h"
 #include "ortools/constraint_solver/constraint_solver.h"
 
@@ -53,7 +58,8 @@ void RunConstraintProgrammingExample() {
 }
 }  // namespace operations_research
 
-int main(int argc, char** argv) {
+//Changes to original file
+int main_constraint_programming_cp(int argc, char** argv) {
   google::InitGoogleLogging(argv[0]);
   FLAGS_logtostderr = 1;
   operations_research::RunConstraintProgrammingExample();

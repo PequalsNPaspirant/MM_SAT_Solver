@@ -134,20 +134,20 @@
     <ClCompile Include="minisat\minisat\core\Main.cc">
       <Filter>Source Files\minisat\core</Filter>
     </ClCompile>
-    <ClCompile Include="minisat\minisat\simp\Main.cc">
-      <Filter>Source Files\minisat\simp</Filter>
-    </ClCompile>
     <ClCompile Include="sudoku\Sudoku_Solver_minisat_v1.cpp">
       <Filter>Source Files\Sudoku</Filter>
     </ClCompile>
     <ClCompile Include="_MM_SAT_Solver_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="or-tools_VisualStudio2017-64bit_v7.4.7247\examples\cpp\_Google_OR_Tools_examples_main.cpp">
+      <Filter>Source Files\Google_OR_Tools_examples</Filter>
+    </ClCompile>
     <ClCompile Include="or-tools_VisualStudio2017-64bit_v7.4.7247\examples\cpp\constraint_programming_cp.cc">
       <Filter>Source Files\Google_OR_Tools_examples</Filter>
     </ClCompile>
-    <ClCompile Include="or-tools_VisualStudio2017-64bit_v7.4.7247\examples\cpp\_Google_OR_Tools_examples_main.cpp">
-      <Filter>Source Files\Google_OR_Tools_examples</Filter>
+    <ClCompile Include="minisat\minisat\simp\Main_simp.cc">
+      <Filter>Source Files\minisat\simp</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

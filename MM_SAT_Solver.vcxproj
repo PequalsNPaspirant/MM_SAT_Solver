@@ -53,7 +53,7 @@
     <ClCompile Include="minisat\minisat\core\Solver.cc" />
     <ClCompile Include="minisat\minisat\core\SolverTypes.cc" />
     <ClCompile Include="minisat\minisat\simp\SimpSolver.cc" />
-    <ClCompile Include="minisat\minisat\simp\Main.cc" />
+    <ClCompile Include="minisat\minisat\simp\Main_simp.cc" />
     <ClCompile Include="minisat\minisat\utils\Options.cc" />
     <ClCompile Include="minisat\minisat\utils\System.cc" />
     <ClCompile Include="sudoku\Sudoku_main.cpp" />
